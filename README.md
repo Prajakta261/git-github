@@ -1,2 +1,2 @@
 # git-github
-This is BookStore Mini Project in java.
+This is Book Store Management System in java.
