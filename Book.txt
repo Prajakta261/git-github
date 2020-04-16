@@ -1,0 +1,39 @@
+class Book {
+
+    private String title;
+    private int numOfPages;
+    private double price;
+    private int quantity;
+
+    public Book(String theTitle, int pages, double cost, int num) {
+        title = theTitle;
+        numOfPages = pages;
+        price = cost;
+        num = quantity;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public String toString() {
+        return "Title:" + title + "\nNumber of pages: " + numOfPages + "\nPrice:" + price + "\nquantity left:" + getQuantity();
+    }
+
+    public void subtractQuantity(int amount) {
+        quantity = quantity - amount;
+    }
+
+	public void addQuantity(int quantity2) {
+		// TODO Auto-generated method stub
+		
+	}
+}

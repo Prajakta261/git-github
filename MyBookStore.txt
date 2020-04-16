@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class MyBookstore {
+
+    public static void main(String[] args) {
+
+        try (Scanner s = new Scanner(System.in)) {
+			Bookstore mybookstore = new Bookstore();
+
+			int user_choice;
+
+			do {
+
+			    System.out.println();
+			    System.out.println("1) Add a book to the stock");
+			    System.out.println("2) Sell a book in stock");
+			    System.out.println("3) List the titles of all the books in stock");
+			    System.out.println("4) List all the information about the books in stock");
+			    System.out.println("5) Print out the gross income of the bookstore");
+			    System.out.println("6) Quit");
+			    System.out.println();
+			    System.out.print("please select one of the six options");
+			    System.out.println();
+			    System.out.print("your choice:");
+			    user_choice = s.nextInt();
+			    switch (user_choice) {
+			        case 1:
+			            System.out.println("Enter a title");
+			            String title = s.next();
+			            System.out.println("how many pages is the book?");
+			            int pages = s.nextInt();
+
+			            System.out.println("how much does this book cost?");
+			            double price = s.nextInt();
+			            System.out.println("how many of these books are there in stock?");
+			            int stock = s.nextInt();
+
+			            Book c = new Book(title, pages, price, stock);
+			            mybookstore.addNewBook(c);
+
+			            break;
+			        case 2:
+			            System.out.println("Selling books:");
+			            System.out.println("Enter the title...");
+			            String an = s.next();
+			            System.out.println("Enter a quantity");
+			            int da = s.nextInt();
+			            mybookstore.sellBook(an, da);
+			            break;
+			        case 3:
+			            mybookstore.listTitles();
+			            break;
+			        case 4:
+			            mybookstore.listBooks();
+			            break;
+			        case 5:
+			            mybookstore.getIncome();
+
+			            break;
+			        default:
+			            System.out.println("please select from one of the six options");
+
+			    }
+			} while (user_choice != '6');
+		}
+    }
+}
